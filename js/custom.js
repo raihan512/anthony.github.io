@@ -1,70 +1,60 @@
-$(document).ready(function(){
+$(document).ready(function () {
 
-    //Sticky Navbar
-    $('.sticky-plugin').waypoint(function(direction){
-        if(direction == 'down'){
-              $('nav').addClass('sticky');
-           } else {
-              $('nav').removeClass('sticky');
-        }
-     }); 
+   //Sticky Navbar
+   $('.sticky-plugin').waypoint(function (direction) {
+      if (direction == 'down') {
+         $('nav').addClass('sticky');
+      } else {
+         $('nav').removeClass('sticky');
+      }
+   });
 
 
 
    //Animated Menu
-
-   $('.nav-link').on({
-      click: function(){
-         $('.menu').css({"left": "-100%"});
-         $('#close').css({"display": "none"});
-         $('#btn').css({"display": "block"});
-      }
-   });
-
    $('#btn').on({
-      click: function(){
-         $('.menu').css({"left": "0"});
-         $('#close').css({"display": "block"});
-         $('#btn').css({"display": "none"});
+      click: function () {
+         $('.menu').css({ "left": "0" });
+         $('#close').css({ "display": "block" });
+         $('#btn').css({ "display": "none" });
       }
    });
 
    $('#close').on({
-      click: function(){
-         $('#close').css({"display": "none"});
-         $('#btn').css({"display": "block"});
-         $('.menu').css({"left": "-100%"});
+      click: function () {
+         $('#close').css({ "display": "none" });
+         $('#btn').css({ "display": "block" });
+         $('.menu').css({ "left": "-100%" });
       }
    });
 
-
    //fakeloader
-     window.FakeLoader.init({
-     
-    });
+   window.FakeLoader.init({
 
-    //Counter
-    $('.counter').counterUp({
-        delay: 20,
-        time: 1000
-    });
+   });
 
-    //WOW JS
-    new WOW().init();
+   //Counter
+   $('.counter').counterUp({
+      delay: 20,
+      time: 1000
+   });
 
-    $('.popup').magnificPopup({type:'image'});
+   //WOW JS
+   new WOW().init();
+
+   $('.popup').magnificPopup({ type: 'image' });
 
 
-    //scrollTop Button
-    $(window).scroll(function(){
-        if($(this).scrollTop() >20){
-              $(".topbtn").fadeIn();
-        } else {
-        $(".topbtn").fadeOut();
-     }
-     });
-     $(".topbtn").click(function(){
-        $('html, body').animate({scrollTop: 0}, 500);
-     });
+   //scrollTop Button
+   $(window).scroll(function () {
+      if ($(this).scrollTop() > 20) {
+         $(".topbtn").fadeIn();
+      } else {
+         $(".topbtn").fadeOut();
+      }
+   });
+   $(".topbtn").click(function () {
+      $('html, body').animate({ scrollTop: 0 }, 500);
+   });
 
 });
